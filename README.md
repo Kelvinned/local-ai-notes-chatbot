@@ -37,13 +37,7 @@ python main.py
 
 Type your question in the terminal.
 
-To exit the chatbot, type:
-
-q
-
-or:
-
-exit
+To exit the chatbot, type: q or exit
 
 ## Example Questions
 
