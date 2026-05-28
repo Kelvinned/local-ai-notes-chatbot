@@ -1,0 +1,4 @@
+An LLM is a Large Language Model trained on huge amounts of text.
+It predicts and generates human-like language.
+Local LLMs can run on your own computer using tools like LM Studio.
+RAG allows an LLM to answer using external documents instead of only its training memory.
