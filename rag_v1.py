@@ -13,13 +13,21 @@ def split_into_chunks(text):
     return text.split(". ")
 
 def find_relevant_chunks(question, chunks):
+    stop_words = ["what", "is", "are", "the", "a", "an", "about", "do", "does", "my", "notes", "say", "speak", "tell", "me"]
+
     question_words = question.lower().split()
+    important_words = []
+
+    for word in question_words:
+        if word not in stop_words:
+            important_words.append(word)
+
     relevant_chunks = []
 
     for chunk in chunks:
         chunk_lower = chunk.lower()
 
-        for word in question_words:
+        for word in important_words:
             if word in chunk_lower:
                 relevant_chunks.append(chunk)
                 break
@@ -48,23 +56,15 @@ while True:
 
     response = client.chat.completions.create(
         model="llama-3.2-3b-instruct",
-        messages=[
-            {
-                "role": "system",
-                "content": f"""
-                You are a strict notes assistant.
-                Answer ONLY using the context below.
-                Do not add outside knowledge.
-                Do not guess.
-                If the answer is not in the context, say: "I don't know based on the notes."
-                Context:{context}"""
-            },
-            {
-                "role": "user",
-                "content": user_question
-            }
-        ],
-        temperature=0.3
-    )
+        messages=[{"role": "system",
+                   "content": f"""You are a strict notes assistant.
+                   Use ONLY the context below to answer.
+                   The context below is already selected from the user's notes.
+                   If the context contains information related to the question, answer using that information.
+                   Do not use outside knowledge.
+                   If the context is empty or unrelated, say: "The topic isn't discussed in the notes."
+                   Context:{context}"""},
+                   {"role": "user","content": user_question}],temperature=0.1)
+    
 
     print("\nAI:", response.choices[0].message.content)
