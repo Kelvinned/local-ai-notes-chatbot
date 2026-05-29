@@ -1,0 +1,23 @@
+LLM:
+A Large Language Model is an AI model trained on large amounts of text to understand and generate human-like language.
+
+Local LLM:
+A local LLM runs on the user's own computer instead of a company's cloud server. Tools like LM Studio or Ollama can run local models.
+
+LM Studio:
+LM Studio is a desktop application that lets users download, run, and chat with local language models. It also provides a local OpenAI-compatible server.
+
+OpenAI-Compatible API:
+An OpenAI-compatible API means another tool follows the same request format as OpenAI's API. In this project, the OpenAI Python SDK sends requests to the local LM Studio server running on the user's own computer. It does not send requests to OpenAI's paid servers.
+
+RAG:
+RAG stands for Retrieval-Augmented Generation. It allows an LLM to answer using external documents, outside files, or notes instead of relying only on its training memory or internal model knowledge.
+
+Embeddings:
+Embeddings are numerical representations of text. They help compare the meaning of a user question with chunks of documents.
+
+Vector Search:
+Vector search finds text chunks that are semantically similar to a question. It is used in proper RAG systems to retrieve relevant information.
+
+Agentic AI:
+Agentic AI systems can use tools, follow steps, and make decisions to complete tasks. They are more action-oriented than simple chatbots.

@@ -1,0 +1,5 @@
+Python Functions:
+A Python function is a reusable block of code that performs a specific task. Functions are defined using the def keyword.
+
+Python Lists:
+A Python list stores multiple items in one variable. Lists are ordered, changeable, and can contain different data types.
