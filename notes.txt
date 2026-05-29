@@ -11,7 +11,7 @@ OpenAI-Compatible API:
 An OpenAI-compatible API means another tool follows the same request format as OpenAI's API. In this project, the OpenAI Python SDK sends requests to the local LM Studio server running on the user's own computer. It does not send requests to OpenAI's paid servers.
 
 RAG:
-RAG stands for Retrieval-Augmented Generation. It allows an LLM to answer using external documents or notes instead of relying only on its training memory.
+RAG stands for Retrieval-Augmented Generation. It allows an LLM to answer using external documents, outside files, or notes instead of relying only on its training memory or internal model knowledge.
 
 Embeddings:
 Embeddings are numerical representations of text. They help compare the meaning of a user question with chunks of documents.
